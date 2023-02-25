@@ -12,6 +12,7 @@ public:
     vector<vector<int>> combinationSum(vector<int>& c, int t) 
     {
         vector<int> bag;
+        sort(c.begin(),c.end());
         helper(c,t,bag,0);
         return ans;
     }
