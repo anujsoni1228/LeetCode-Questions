@@ -18,6 +18,7 @@ public:
     }
 };
 
-    // to understand watch striver's video of next greater element
-    // and also see solution pdf containing detailed explaination
+// to understand watch striver's video of next greater element
+// and also see solution pdf containing detailed explaination
+// related to monotonic stack
     
