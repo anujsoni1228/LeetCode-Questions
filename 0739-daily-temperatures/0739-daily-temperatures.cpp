@@ -17,3 +17,7 @@ public:
         return ans;
     }
 };
+
+    // to understand watch striver's video of next greater element
+    // and also see solution pdf containing detailed explaination
+    
