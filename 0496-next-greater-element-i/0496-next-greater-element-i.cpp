@@ -1,6 +1,10 @@
 class Solution {
 public:
-    vector<int> nextGreaterElement(vector<int>& a, vector<int>& b) {
+    // same logic of next greater element using stack and monotonic stack 
+    // just a map is used to answer the query which is nums1 vector
+    
+    vector<int> nextGreaterElement(vector<int>& a, vector<int>& b) 
+    {
         stack<int> s;
         int n=b.size();
         vector<int> ans;
@@ -15,7 +19,7 @@ public:
             else
                 m[b[i]]=s.top(),s.push(b[i]);            
         }
-        for(auto i:a)ans.push_back(m[i]);
+        for(auto i:a) ans.push_back(m[i]);
         return ans;
     }  
     
