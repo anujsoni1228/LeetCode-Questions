@@ -2,7 +2,7 @@ class Solution {
 public:
     // same logic of next greater element using stack and monotonic stack 
     // just a map is used to answer the query which is nums1 vector
-    
+    // https://youtu.be/rSf9vPtKcmI&t=1m44s  <-- watch for best quick explaination
     vector<int> nextGreaterElement(vector<int>& a, vector<int>& b) 
     {
         stack<int> s;
