@@ -19,7 +19,7 @@ public:
     
      void flatten(TreeNode* root) 
      {
-         if(!root || !root->left && !root->right)
+         if(!root)
              return ;
          
         stack<TreeNode*> s;
