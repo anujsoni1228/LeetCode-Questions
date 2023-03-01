@@ -1,15 +1,15 @@
 
 class Solution {
 public:
-// my own recursie code
-// for each node do this :
-// make its left subtree flatten
-// make its right subtree flatten
-// save the reference of RST to temp
-// copy the reference of LST to root->right
-//  and find the rightMost Nde and append temp to it
+    // my own recursie code
+    // for each node do this :
+    // make its left subtree flatten
+    // make its right subtree flatten
+    // save the reference of RST to temp
+    // copy the reference of LST to root->right
+    //  and find the rightMost Nde and append temp to it
 
-// handle the base case
+    // handle the base case
     
     void flatten1(TreeNode* root) {
         
@@ -34,7 +34,7 @@ public:
             h=h->right;
         // and append temp to it
         h->right=temp;
-    }
+     }
     
     
 //     2nd appproach using Stack DS
@@ -47,8 +47,7 @@ public:
 //         make cur's right point to stack's top
 //         cur's left NULL
         
-        
-     void flatten2(TreeNode* root) 
+    void flatten2(TreeNode* root) 
      {
          if(!root || !root->left && !root->right)
              return ;
@@ -73,6 +72,23 @@ public:
          }
      }
     
+    
+    
+    
+    // third approach using O(1) space No Extra space
+    // complicated to understand (intution wise)
+    // undertand with dry run and striver video
+    
+    // for a node
+    // if left doesnt exist (ye to achi bat he)
+    // sidha right per chle jaoo
+    // if left exist then find the left subtree's right most node
+    // (go left then right-> right-> right->)
+    // connect right to c's right
+    // connect left NLR's "R" to right NLR's "N"
+    // left ko right banao
+    // left ko NULL banao
+    // and go on....
     
      void flatten(TreeNode* root) 
      {
