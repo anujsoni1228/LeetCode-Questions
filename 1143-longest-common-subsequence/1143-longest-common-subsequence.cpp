@@ -1,8 +1,11 @@
 class Solution {
 public:
-    int longestCommonSubsequence(string a, string b) {
+    int longestCommonSubsequence(string a, string b) 
+    {
         int r=a.size(),c=b.size();
-        vector<vector<int>> dp(r+1,vector<int> (c+1));
+        int dp[r+1][c+1];
+        for(int i=0;i<=r;i++)dp[i][c]=0;
+        for(int i=0;i<=c;i++)dp[r][i]=0;
         for(int i=r-1;i>=0;i--)
         {
             for(int j=c-1;j>=0;j--)
