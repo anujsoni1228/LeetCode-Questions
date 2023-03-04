@@ -6,9 +6,9 @@ public:
         int st=0;
         for(int i=0;i<n;i++)
         {
-            if(s[i]>='a' && s[i]<='z')
+            if(s[i]>='a')
                 res+=s[i];
-            else if(s[i]>='0' and s[i]<='9')
+            else if(s[i]<='9')
                 t=t*10+s[i]-'0';
             else if(s[i]=='[')
             {
