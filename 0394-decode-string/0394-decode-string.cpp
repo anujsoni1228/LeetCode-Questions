@@ -3,7 +3,7 @@ public:
     string decodeString(string s) {
         string res;
         int n=s.size(),t=0,j;
-        stack<char> st;
+        int st=0;
         for(int i=0;i<n;i++)
         {
             if(s[i]>='a' && s[i]<='z')
@@ -13,15 +13,15 @@ public:
             else if(s[i]=='[')
             {
                 string cur;
-                st.push('[');
+                st++;
                 for(j=i+1;j<n;j++)
                 {
                     if(s[j]=='[')
-                        st.push('[');
+                        st++;
                     else if(s[j]==']')
-                        st.pop();
+                        st--;
                     
-                    if(st.empty())
+                    if(!st)
                         break;
                     
                     cur+=s[j];
@@ -31,8 +31,7 @@ public:
                     res+=x;       
                 i=j;
                 t=0;
-            }
-            
+            }            
         }
         return res;
     }
