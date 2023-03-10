@@ -33,7 +33,7 @@ public:
             return 0;
         else
         {
-            vector<vector<bool>> dp(n+1,vector<bool>(sum/2+1,0));
+            vector<vector<bool>> dp(n+1,vector<bool>(sum/2+1));
             for(int i=0;i<=n;i++)
                 dp[i][0]=1;
             for(int i=n-1;i>=0;i--)
