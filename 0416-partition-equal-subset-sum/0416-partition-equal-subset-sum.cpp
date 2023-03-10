@@ -71,7 +71,7 @@ public:
                         x=next[j-nums[i]];
                     cur[j]=next[j]||x;
                 }
-                next=cur;
+                swap(next,cur);                
                 
             }
             return cur[sum/2];
