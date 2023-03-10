@@ -26,6 +26,30 @@ public:
     //     }
     // }
     
+    // bool canPartition(vector<int>& nums) {
+    //     int sum=0,n=nums.size();        
+    //     for(auto i:nums)sum+=i;
+    //     if(sum%2==1)
+    //         return 0;
+    //     else
+    //     {
+    //         vector<vector<bool>> dp(n+1,vector<bool>(sum/2+1));
+    //         for(int i=0;i<=n;i++)
+    //             dp[i][0]=1;
+    //         for(int i=n-1;i>=0;i--)
+    //         {
+    //             for(int j=0;j<=sum/2;j++)
+    //             {
+    //                 bool x=0;
+    //                 if(j-nums[i]>=0)
+    //                     x=dp[i+1][j-nums[i]];
+    //                 dp[i][j]=dp[i+1][j]||x;
+    //             }
+    //         }
+    //         return dp[0][sum/2];
+    //     }
+    // }
+    
     bool canPartition(vector<int>& nums) {
         int sum=0,n=nums.size();        
         for(auto i:nums)sum+=i;
@@ -33,20 +57,24 @@ public:
             return 0;
         else
         {
-            vector<vector<bool>> dp(n+1,vector<bool>(sum/2+1));
-            for(int i=0;i<=n;i++)
-                dp[i][0]=1;
+            
+            vector<bool> cur(sum/2+1);
+            vector<bool> next(sum/2+1);
+            
+            next[0]=1;
             for(int i=n-1;i>=0;i--)
             {
                 for(int j=0;j<=sum/2;j++)
                 {
                     bool x=0;
                     if(j-nums[i]>=0)
-                        x=dp[i+1][j-nums[i]];
-                    dp[i][j]=dp[i+1][j]||x;
+                        x=next[j-nums[i]];
+                    cur[j]=next[j]||x;
                 }
+                next=cur;
+                
             }
-            return dp[0][sum/2];
+            return cur[sum/2];
         }
     }
 };
