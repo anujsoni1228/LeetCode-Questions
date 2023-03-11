@@ -1,17 +1,34 @@
 class Solution {
 public:
     bool checkInclusion(string s1, string s2) {
-        sort(s1.begin(),s1.end());
         int a=s1.size();
         int b=s2.size();
-        for(int i=0;i+a<=b;i++)
-        {
-            string x=s2.substr(i,a);
-            sort(x.begin(),x.end());
-            if(x==s1)
-                return true;
-        }
-        return false;
+        int c1[26]={0};
+        int c2[26]={0};
+        if(a>b)
+            return 0;
+        for(auto i:s1)c1[i-'a']++;
+        for(int i=0;i<a;i++)c2[s2[i]-'a']++;
         
+        
+        for(int i=0;i+a<=b;)
+        {
+            bool f=0;
+            for(int j=0;j<26;j++)
+            {
+                if(c1[j]!=c2[j])
+                {
+                    f=1;
+                    break;
+                }
+            }
+            if(f==0)
+                return 1;
+            c2[s2[i]-'a']--;
+            if(s2[i+a]!='\0')
+            c2[s2[i+a]-'a']++;
+            i++;
+        }
+        return false;        
     }
 };
