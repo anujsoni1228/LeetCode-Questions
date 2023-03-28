@@ -3,7 +3,7 @@ public:
     int finalValueAfterOperations(vector<string>& o) {
         int x=0;
         for(auto i:o)
-            i[1]=='+'?x++:x--;
+            x+=i[1]=='+'?1:-1;
         return x;
     }
 };
