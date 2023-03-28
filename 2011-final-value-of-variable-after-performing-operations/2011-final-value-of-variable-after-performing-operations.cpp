@@ -4,9 +4,9 @@ public:
         int x=0;
         for(auto i:o)
         {
-            if(i[0]=='+' || i[2]=='+')
+            if(i[1]=='+')
                 x++;
-            if(i[0]=='-' || i[2]=='-' )
+            if(i[1]=='-')
                 x--;
         }
         return x;
