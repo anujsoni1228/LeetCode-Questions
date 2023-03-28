@@ -17,7 +17,7 @@ public:
             sum+=nums[i+k];
         }
         if(s.size()==k)
-                mx=max(mx,sum);
+            mx=max(mx,sum);
         return mx;
     }
 };
