@@ -52,5 +52,14 @@ vector<long long> printFirstNegativeInteger
         }
     }
     return ans;
-                                                 
 }
+
+/*
+queue use kri hai plus sliding window
+j pointer (end-pointer of window) will push all 
+negative numbers in its way to queue so jab jab window size
+k ke equal hogi to hum jo bhi queue ke front me pda hoga
+usko print krwa denge jo element window se remove hoga
+vo agar negative element hua to hum queue se ek bar pop 
+kr denge
+*/
