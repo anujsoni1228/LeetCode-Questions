@@ -5,7 +5,7 @@ public:
             return n;
          if(n==1)
              return 2;
-        for(int i=n;154;i++)
+        for(int i=2*n;i>=2;i--)
             if(i%2==0 and i%n==0)
                 return i;
         return 0;
