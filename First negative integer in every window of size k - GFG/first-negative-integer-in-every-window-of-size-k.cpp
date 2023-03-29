@@ -38,10 +38,8 @@ vector<long long> printFirstNegativeInteger
         if(A[j]<0)
             q.push(A[j]);
         if(j-i+1<K)
-        {
             j++;
-        }
-        else if(j-i+1==K)
+        else
         {
             if(q.empty())
                 ans.push_back(0);
