@@ -1,6 +1,7 @@
 class Solution {
 public:
-    string sortSentence(string s) {
+    string sortSentence(string s) 
+    {
         vector<string> x(9);
         string ans;
         int c=0;
