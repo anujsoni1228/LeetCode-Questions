@@ -4,9 +4,9 @@ public:
         int c=0;
         for(auto i:items)
         {
-            if(rk=="type")
+            if(rk[0]=='t')
                 c+=i[0]==rv;
-            else if(rk=="color")
+            else if(rk[0]=='c')
                 c+=i[1]==rv;
             else
                 c+=i[2]==rv;
