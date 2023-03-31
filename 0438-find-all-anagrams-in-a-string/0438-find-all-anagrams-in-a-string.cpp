@@ -21,10 +21,9 @@ public:
                 m[s[i]]++;
                 if(m[s[i]]==1)
                     count++;
-                i++,j++;
+                i++;
             }
-            else
-                j++;
+            j++;
         }
         return ans;
     }
