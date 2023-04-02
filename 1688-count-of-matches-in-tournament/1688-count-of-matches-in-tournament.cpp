@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int numberOfMatches(int n) {
+    int numberOfMatches1(int n) {
         int ans=0;
         while(n>1)
         {
@@ -10,5 +10,8 @@ public:
                 ans+=(n-1)/2,n=((n-1)/2)+1;
         }
         return ans;
+    }
+    int numberOfMatches(int n) {
+        return n-1;
     }
 };
