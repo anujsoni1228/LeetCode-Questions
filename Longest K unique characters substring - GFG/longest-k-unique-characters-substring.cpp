@@ -5,8 +5,14 @@
 using namespace std;
 
 // } Driver Code Ends
-class Solution{
+class Solution {
   public:
+  
+// variable sized window Format lagaya he 
+//   as learnt from aditya verma playlist
+// + map use kiya he 
+// agar kisi character ki frequency map se niche jati he 
+// to usko hum map se erase kr denge
     int longestKSubstr(string s, int k) {
         int n=s.size(),i=0,j=0,ans=-1;
         unordered_map<char,int> st;
@@ -27,7 +33,7 @@ class Solution{
                     i++;
                 }
                 if(st.size()==k)
-                ans=max(ans,j-i+1),j++;
+                    ans=max(ans,j-i+1),j++;
             }
         }
         return ans;
