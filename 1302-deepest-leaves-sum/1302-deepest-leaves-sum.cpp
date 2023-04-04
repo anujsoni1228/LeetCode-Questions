@@ -12,8 +12,8 @@ public:
     int deepestLeavesSum(TreeNode* r) {
         unordered_map<int,int> m;
         inorder(r,m,0);
-        for(auto i:m)
-            cout<<i.first<<"->"<<i.second<<endl;
+        // for(auto i:m)
+        //     cout<<i.first<<"->"<<i.second<<endl;
         return m[m.size()-1];
     }
 };
