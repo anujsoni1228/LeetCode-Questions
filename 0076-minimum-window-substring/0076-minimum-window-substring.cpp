@@ -2,10 +2,8 @@ class Solution {
 public:
     string minWindow(string s, string t) 
     {
-        if(s.size()<t.size())
-            return "";
         unordered_map<char,int> m;
-        int c=0,i=0,j=0,n=s.size(),ans=INT_MAX,a=0,b=s.size()-1;
+        int c=0,i=0,j=0,n=s.size(),ans=INT_MAX,a=0,b=0;
         for(auto i:t)m[i]++;
         c=m.size();
         while(j<n)
