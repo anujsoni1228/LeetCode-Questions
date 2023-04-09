@@ -6,13 +6,10 @@ public:
         for(auto i:n)m[i]++,mx=max(mx,m[i]);
         vector<vector<int>> ans(mx);
         for(auto i:m)
-        {
-            while(i.second>0)
-            {
-                ans[i.second-1].push_back(i.first);
-                i.second--;
-            }
-        }
+            while(i.second-->0)
+                ans[i.second].push_back(i.first);
+            
+        
         return ans;
     }
 };
