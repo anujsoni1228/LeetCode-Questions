@@ -15,10 +15,9 @@ class Solution
             s.pop();
             return;
         }
-        t--;
         int x=s.top();
         s.pop();
-        helper(s,t);
+        helper(s,--t);
         s.push(x);
     }
     void deleteMid(stack<int> &s, int sz)
