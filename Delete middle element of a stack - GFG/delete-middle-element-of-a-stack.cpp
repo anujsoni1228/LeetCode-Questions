@@ -11,10 +11,7 @@ class Solution
     void helper(stack<int> &s, int t)
     {
         if(t==0)
-        {
-            s.pop();
-            return;
-        }
+        {  s.pop(); return; }
         int x=s.top();
         s.pop();
         helper(s,--t);
@@ -22,7 +19,7 @@ class Solution
     }
     void deleteMid(stack<int> &s, int sz)
     {
-        helper(s,sz-(sz+1)/2);   
+        helper(s,sz/2);   
     }
 };
 
