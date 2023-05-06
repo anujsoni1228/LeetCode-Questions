@@ -1,32 +1,18 @@
 class Solution {
 public:
-    int calculateGrandChild(TreeNode* r)
-    {
-        int ans=0;
-        if(r->left and r->left->left)
-            ans+=r->left->left->val;
-        if(r->left and r->left->right)
-            ans+=r->left->right->val;
-        if(r->right and r->right->right)
-            ans+=r->right->right->val;
-        if(r->right and r->right->left)
-            ans+=r->right->left->val;    
-        
-        return ans;
-    }
-    void inorder(TreeNode* r,int &ans)
+    void inorder(TreeNode* r,TreeNode* p,TreeNode* gp,int &ans)
     {
         if(r)
         {
-            inorder(r->left,ans);
-            if(r->val%2==0)
-                ans+=calculateGrandChild(r);
-            inorder(r->right,ans);
+            inorder(r->left,r,p,ans);
+            if(gp and gp->val%2==0)
+                ans+=r->val;
+            inorder(r->right,r,p,ans);
         }
     }
     int sumEvenGrandparent(TreeNode* r) {
         int ans=0;
-        inorder(r,ans);
+        inorder(r,NULL,NULL,ans);
         return ans;
     }
 };
