@@ -30,7 +30,6 @@ class Solution{
             if(dp[arr.size()][i])
                 ans=min(ans,sum-2*i);
         return ans;
-        
     }
 	int minDifference(int arr[], int n)  { 
 	    vector<int> x(arr,arr+n);
