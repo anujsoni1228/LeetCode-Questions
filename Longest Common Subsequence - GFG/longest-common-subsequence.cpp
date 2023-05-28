@@ -9,20 +9,20 @@ using namespace std;
 class Solution
 {
     public:
-    int lcs2(int x, int y, string s1, string s2,vector<vector<int>> &dp)
-    {
-        if(x==0 or y==0)
-            return 0;
-        if(dp[x][y]!=-1)
-            return dp[x][y];
-        if(s1[x-1]==s2[y-1])
-            return dp[x][y]=1+lcs2(x-1,y-1,s1,s2,dp);
-        return dp[x][y]=max(lcs2(x,y-1,s1,s2,dp),lcs2(x-1,y,s1,s2,dp));
-    }
     int lcs(int x, int y, string s1, string s2)
     {
-        vector<vector<int>> dp(x+1,vector<int>(y+1,-1));
-        return lcs2(x,y,s1,s2,dp);
+        vector<vector<int>> dp(x+1,vector<int>(y+1,0));
+        for(int i=1;i<=x;i++)
+        {
+            for(int j=1;j<=y;j++)
+            {
+                if(s1[i-1]==s2[j-1])
+                    dp[i][j]=1+dp[i-1][j-1];
+                else
+                    dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
+            }
+        }
+        return dp[x][y];
     }
 };
 
