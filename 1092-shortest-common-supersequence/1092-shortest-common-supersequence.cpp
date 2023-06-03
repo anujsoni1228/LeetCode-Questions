@@ -56,13 +56,13 @@ public:
                 }
             }
         }
-        while(i<a.size() and j<b.size())
-        {
-            ans+=a[i];
-            ans+=b[j];
-            i++;
-            j++;
-        }
+        // while(i<a.size() and j<b.size())
+        // {
+        //     ans+=a[i];
+        //     ans+=b[j];
+        //     i++;
+        //     j++;
+        // }
         while(i<a.size())
         {
             ans+=a[i];
