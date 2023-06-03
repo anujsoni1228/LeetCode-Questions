@@ -22,6 +22,10 @@ public:
     
     string shortestCommonSupersequence(string a, string b) {
         string lcs=lcs1(a.size(),b.size(),a,b),ans;  
+        
+        // my own three pointer logic 
+        
+        // The three-pointer logic finds the shortest common supersequence of strings a and b. It iterates through a, b, and the longest common subsequence (LCS). If characters match in a and b, and also with the LCS, they are added to the supersequence. If characters match with only one of them, the unmatched character is added. If no match occurs, both characters are added. Finally, remaining characters from a and b are appended. This logic efficiently combines characters, using the LCS as a reference to avoid duplicates.
         int i=0,j=0,k=0;
         while(i<a.size() and j<b.size() and k<lcs.size())
         {
@@ -56,13 +60,6 @@ public:
                 }
             }
         }
-        // while(i<a.size() and j<b.size())
-        // {
-        //     ans+=a[i];
-        //     ans+=b[j];
-        //     i++;
-        //     j++;
-        // }
         while(i<a.size())
         {
             ans+=a[i];
