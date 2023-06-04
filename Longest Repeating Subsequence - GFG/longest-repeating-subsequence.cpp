@@ -12,6 +12,13 @@ class Solution {
         {
             for(int j=1;j<=y;j++)
             {
+                // The condition "s1[i-1]==s2[j-1] and i!=j" checks 
+                // if the characters at indices i-1 and j-1 are equal
+                // but also ensures that the indices i and j are not 
+                // the same. This condition ensures that the common 
+                // subsequence being considered is a repeating subsequence,
+                // as it excludes cases where the same character is being 
+                // used twice consecutively.
                 if(s1[i-1]==s2[j-1] and i!=j)
                     dp[i][j]=1+dp[i-1][j-1];
                 else
