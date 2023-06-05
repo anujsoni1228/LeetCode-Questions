@@ -1,22 +1,18 @@
 class Solution {
 public:
-    int lcs(int x, int y, string s1, string s2)
-    {
-        vector<vector<int>> dp(x+1,vector<int>(y+1,0));
-        for(int i=1;i<=x;i++)
-        {
-            for(int j=1;j<=y;j++)
-            {
-                if(s1[i-1]==s2[j-1])
-                    dp[i][j]=1+dp[i-1][j-1];
-                else
-                    dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
-            }
-        }
-        return dp[x][y];
-    }
+    
     bool isSubsequence(string s, string t) 
     {
-        return lcs(s.size(),t.size(),s,t)==s.size();
+        int m=s.size(),n=t.size();
+        int i=0,j=0;
+        while(i<m){
+            while(j<n and t[j]!=s[i]){
+                j++;
+            }
+            if(j==n)
+                return 0;
+            j++;i++;
+        }
+        return 1;
     }
 };
