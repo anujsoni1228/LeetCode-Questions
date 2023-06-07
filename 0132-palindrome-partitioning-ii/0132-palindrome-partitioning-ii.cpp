@@ -1,5 +1,17 @@
 class Solution {
 public:
+/* 
+    Instead of writing below standard line
+    We will recurse for only right part
+    Only when left part turns out to be palindrome
+
+    Reason : If left substring becomes palindrome then there is no need to partition it further 
+    (which in turn reduces the number of recursive calls)
+
+    int temp =  solve (s, i, k, dp, palindrome) + solve (s, k+1, j, dp, palindrome) + 1;
+
+*/
+            
     bool isPal(string &s, int i, int j)
     {
         while(i<j)
@@ -23,7 +35,12 @@ public:
         {
             if(isPal(s,i,k-1))
             {
-                ans=min(ans,1+solve(s,k,j,dp));
+                int r;
+                if(dp[k]!=-1)
+                    r=dp[k];
+                else
+                    r=dp[k]=solve(s,k,j,dp);
+                ans=min(ans,1+r);
             }
         }
         return dp[i]=ans;
