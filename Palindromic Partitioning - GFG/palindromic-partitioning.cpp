@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution{
 public:
-bool isPal(string s)
+    bool isPal(string s)
     {
         int i=0,j=s.length()-1;
         while(i<j)
@@ -35,15 +35,11 @@ bool isPal(string s)
         }
         return dp[i][j]=ans;
     }
-    int minCut(string s) 
+    int palindromicPartition(string s)
     {
         int N=s.size();
         vector<vector<int>> dp(N,vector<int>(N,-1));
         return solve(s,0,N-1,dp);
-    }
-    int palindromicPartition(string str)
-    {
-        return minCut(str);
     }
 };
 
