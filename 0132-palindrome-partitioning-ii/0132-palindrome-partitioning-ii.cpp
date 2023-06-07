@@ -1,11 +1,13 @@
 class Solution {
 public:
-    bool isPal(string s)
+    bool isPal(string &s, int i, int j)
     {
-        int i=0,j=s.length()-1;
         while(i<j)
-        if(s[i++]!=s[j--])
-            return false;
+        {
+            if(s[i]!=s[j]) 
+                return false;
+            i++; j--;
+        }
         return true;
     }
     int solve(string s,int i,int j, vector<int> &dp)
@@ -13,13 +15,13 @@ public:
         if(dp[i]!=-1)
             return dp[i];
         
-        if(isPal(s.substr(i,j-i+1)))
+        if(isPal(s,i,j))
             return dp[i]=0;       
                 
         int ans=INT_MAX;
         for(int k=i+1;k<=j;k++)
         {
-            if(isPal(s.substr(i,k-i)))
+            if(isPal(s,i,k-1))
             {
                 ans=min(ans,1+solve(s,k,j,dp));
             }
