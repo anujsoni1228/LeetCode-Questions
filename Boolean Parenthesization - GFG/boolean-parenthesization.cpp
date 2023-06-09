@@ -23,16 +23,16 @@ public:
             switch(s[k])
             {
                 case '&':
-                    ans.first+=( l.first*r.first)%1003;
-                    ans.second+=((l.first*r.second)%1003 + (l.second*r.first)%1003 + (l.second*r.second)%1003)%1003;
+                    ans.first+=( l.first*r.first);
+                    ans.second+=((l.first*r.second) + (l.second*r.first) + (l.second*r.second));
                 break;
                 case '|':
-                    ans.first+=( (l.first*r.second)%1003 + (l.second*r.first)%1003 + (l.first*r.first)%1003)%1003;
-                    ans.second+=(l.second*r.second)%1003;
+                    ans.first+=( (l.first*r.second) + (l.second*r.first) + (l.first*r.first));
+                    ans.second+=(l.second*r.second);
                 break;
                 case '^':
-                   ans.first+=( (l.first*r.second)%1003 + (l.second*r.first)%1003)%1003;
-                   ans.second+=((l.first*r.first)%1003+(l.second*r.second)%1003)%1003;
+                   ans.first+=( (l.first*r.second) + (l.second*r.first));
+                   ans.second+=((l.first*r.first)+(l.second*r.second));
                 break;
             }
             ans.first%=1003;
