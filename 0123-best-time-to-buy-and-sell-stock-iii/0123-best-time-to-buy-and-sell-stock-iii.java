@@ -1,11 +1,11 @@
 class Solution {
 
-    
-// left[] stores --> aaj ya aaj se pehele bechne per kbhi bhi max kitna profit mil paya he
-// right[] stores --> aaj ya aaj ke bad bechne per kbhi bhi max kitna profit mil paya he
+    // left[] stores --> aaj bechna mandatory ho ya aajj se pehle pehle Khridke bechna mandatory ho to dono me se max kya profit aya he
 
-// return max of (0,left[i]+right[i]) for each price point;
-    
+    // right[] stores --> aaj khridna mandatory ho ya ajj ke bad bad me khrid ke baechne mandatory ho to dono me se max profit kisme milega
+
+    // return max of (0,left[i]+right[i]) for each price point;
+
     public int maxProfit(int[] prices) {
         int n = prices.length;
         int[] left = new int[n];
