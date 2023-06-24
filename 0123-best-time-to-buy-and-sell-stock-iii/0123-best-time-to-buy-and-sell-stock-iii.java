@@ -11,7 +11,6 @@ class Solution {
         int[] left = new int[n];
         int[] right = new int[n];
         int profit = 0;
-        int ans = 0;
 
         int minUntilNow = Integer.MAX_VALUE;
         for (int i = 0; i < n; i++) {
@@ -26,13 +25,12 @@ class Solution {
             maxUntilNow = Math.max(maxUntilNow, prices[i]);
             profit = Math.max(profit, maxUntilNow - prices[i]);
             right[i] = Math.max(right[i], profit);
-            ans = Math.max(left[i] + right[i], ans);
         }
 
-        // int ans = 0;
-        // for (int i = 0; i < n; i++) {
-        //     ans = Math.max(left[i] + right[i], ans);
-        // }
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            ans = Math.max(left[i] + right[i], ans);
+        }
         return ans;
     }
 }
