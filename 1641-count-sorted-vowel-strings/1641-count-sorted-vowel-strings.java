@@ -22,6 +22,11 @@ class Solution {
         return dp[4];
     }
 
+    
+    // Now, let's imagine that we have n stars ( '*' ) (representing the slots) and we want to split them into 5 segments (representing the vowels). To separate the segments, we need to insert 4 bars ( '|' ). For example, if n = 12, one possible arrangement of stars and bars could be:
+
+    // ************||||
+    // --> (aaaaaaaaaaaa)
     public int countVowelStrings(int n) {
         return (n + 4) * (n + 3) * (n + 2) * (n + 1) / 24;
     }
