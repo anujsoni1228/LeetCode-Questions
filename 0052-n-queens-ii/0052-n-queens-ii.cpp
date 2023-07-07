@@ -1,8 +1,8 @@
 class Solution {
 public:
-    void helper(int n, vector<vector<string>>& ans, vector<string>& b, int r, vector<bool>& o) {
+    void helper(int n, int &ans, vector<string>& b, int r, vector<bool>& o) {
         if (r == n) {
-            ans.push_back(b);  // If we have placed queens in all rows, add the current board configuration to the result
+            ans++;  // If we have placed queens in all rows, add the current board configuration to the result
             return;
         }
 
@@ -37,15 +37,14 @@ public:
         }
     }
 
-    vector<vector<string>> solveNQueens(int n) {
-        vector<vector<string>> ans;
+    int totalNQueens(int n) {
+        int ans=0;
         vector<string> b(n, string(n, '.'));  // Initialize the chessboard with '.' representing empty cells
         vector<bool> o(n, false);  // Keep track of occupied columns
         helper(n, ans, b, 0, o);  // Start the backtracking process from the first row
         return ans;  // Return the result
     }
-    int totalNQueens(int n) {
-        return solveNQueens(n).size();
-    }
+    
+   
 };
 
