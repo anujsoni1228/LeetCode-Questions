@@ -6,35 +6,27 @@ import java.util.*;
 class Solution {
     
     public String kthPermutation(int n, int k) {
-        int[] fact = {
-            1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880
-        };
+        int[] fact = { 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880 };
         StringBuilder ans = new StringBuilder();
         int pos = 1, i;
-        
         while (pos <= n) {
             i = 1;
-            
             while (i <= n) {
                 if (fact[i] < 0) {
                     i++;
                     continue;
                 }
-                
                 if (k - Math.abs(fact[n - pos]) > 0) {
                     k -= Math.abs(fact[n - pos]);
                 } else {
                     break;
                 }
-                
                 i++;
             }
-            
             ans.append(i);
             fact[i] = -fact[i];
             pos++;
         }
-        
         return ans.toString();
     }
 }
