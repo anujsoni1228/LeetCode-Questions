@@ -1,14 +1,12 @@
 class Solution {
 
     public int helper(int n, int e, int[][] dp) {
-        if (n == 2) return 2;
-        if (e == 0) return 0;
-        if (e == 1) {
-            return n;
-        }
-        if (n == 1) return 1;
-        if (n <= 0) return 0;
+        if (n == 2 || n==1) return n;
+        if (e == 0 || n <= 0) return 0;
+        if (e == 1) return n;
+
         if (dp[n][e] != -1) return dp[n][e];
+
         int ans = Integer.MAX_VALUE;
         for (int i = 1; i <= n; i++) {
             ans = Math.min(ans, 1 + Math.max(helper(i - 1, e - 1, dp), helper(n - i, e, dp)));
