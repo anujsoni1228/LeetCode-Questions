@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int theMaximumAchievableX(int num, int t) {
-        return num+2*t;
+    int theMaximumAchievableX(int n, int t) {
+        return n+2*t;
     }
 };
