@@ -6,6 +6,6 @@ class Solution {
         for (int i = 0; i < nums.length; i++) {
             max = Math.max(max, nums[i]);
         }
-        return (((max + k - 1) * (max + k)) / 2) - (((max - 1) * (max)) / 2);
+        return (max + k - 1) * (max + k) / 2 - (max - 1) * (max) / 2;
     }
 }
