@@ -1,10 +1,8 @@
 class Solution {
 
-    public int maximizeSum(int[] nums, int k) {
-        int max = 0;
-        for (int i = 0; i < nums.length; i++) {
-            max = Math.max(max, nums[i]);
-        }
-        return (max + k - 1) * (max + k) / 2 - (max - 1) * (max) / 2;
+    public int maximizeSum(int[] n, int k) {
+        int m = 0, i = 0;
+        while (i < n.length) m = Math.max(m, n[i++]);
+        return (m + k - 1) * (m + k) / 2 - (m - 1) * m / 2;
     }
 }
