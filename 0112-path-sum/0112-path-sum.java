@@ -6,8 +6,8 @@ class Solution {
         if (r.left == null && r.right == null) {
             if (!ans) ans = (s + r.val == t);
         }
-        has(r.left, s + r.val, t);
-        has(r.right, s + r.val, t);
+        if (r.left != null) has(r.left, s + r.val, t);
+        if (r.right != null) has(r.right, s + r.val, t);
     }
 
     public boolean hasPathSum(TreeNode r, int t) {
