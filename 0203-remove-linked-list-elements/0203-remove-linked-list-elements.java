@@ -1,5 +1,6 @@
 class Solution {
 
+    // curent and prev pointer approach
     public ListNode removeElements1(ListNode head, int n) {
         ListNode dummy = new ListNode();
         ListNode ans = dummy;
@@ -13,7 +14,8 @@ class Solution {
         }
         return ans.next;
     }
-
+    
+    // recusrive approach
     public ListNode removeElements(ListNode head, int n) {
         if (head == null) return null;
         head.next = removeElements(head.next, n);
