@@ -4,19 +4,23 @@ class Solution
         bool isIsomorphic(string s, string t)
         {
             if (s.size() != t.size()) return false;
-            unordered_map<char, char> m1,m2;
+            unordered_map<char, char> m;
             for (int i = 0; i < s.size(); i++)
             {
-                if (m1.find(s[i]) == m1.end())
+                if (m.find(s[i]) == m.end())
                 {
-                    m1[s[i]] = t[i];
+                    m[s[i]] = t[i];
                 }
                 else
                 {
-                    if (m1[s[i]] == t[i])
+                    if (m[s[i]] == t[i])
                         continue;
                     else return false;
                 }
+            }
+             unordered_map<char, char> m2;
+            for (int i = 0; i < s.size(); i++)
+            {
                 if (m2.find(t[i]) == m2.end())
                 {
                     m2[t[i]] = s[i];
