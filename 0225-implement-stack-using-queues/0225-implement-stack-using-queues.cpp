@@ -1,12 +1,7 @@
 class MyStack
 {
     public:
-        queue<int> *q1, *q2;
-    MyStack()
-    {
-        q1 = new queue<int> ();
-        q2 = new queue<int> ();
-    }
+        queue<int> *q1 = new queue<int> (), *q2 = new queue<int> ();
 
     void push(int x)
     {
@@ -28,8 +23,7 @@ class MyStack
 
     int top()
     {
-        int res = q1->front();
-        return res;
+        return q1->front();
     }
 
     bool empty()
@@ -37,12 +31,3 @@ class MyStack
         return q1->empty();
     }
 };
-
-/**
- *Your MyStack object will be instantiated and called as such:
- *MyStack* obj = new MyStack();
- *obj->push(x);
- *int param_2 = obj->pop();
- *int param_3 = obj->top();
- *bool param_4 = obj->empty();
- */
