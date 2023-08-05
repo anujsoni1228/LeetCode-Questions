@@ -4,10 +4,8 @@ class Solution
 
         string reverseVowels(string s)
         {
-            array<bool, 128> arr = { false
-            };	// Initialize all elements to false
+            bool arr[128] = { 0 };
 
-           	// Set vowel characters to true (both lowercase and uppercase)
             arr['a'] = true;
             arr['e'] = true;
             arr['i'] = true;
@@ -19,6 +17,7 @@ class Solution
             arr['O'] = true;
             arr['U'] = true;
             int left = 0, right = s.size() - 1;
+
             while (left < right)
             {
                 while (left < s.size() and!arr[s[left]]) left++;
