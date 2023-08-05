@@ -1,26 +1,36 @@
 class Solution
 {
     public:
-        bool isVowel(char ch)
+
+        string reverseVowels(string s)
         {
-            return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'|| ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U';
-        }
-    string reverseVowels(string s)
-    {
-        // if(s.size()==1)
-        int left = 0, right = s.size() - 1;
-        while (left < right)
-        {
-            while (left<s.size() and !isVowel(s[left])) left++;
-            while (right>=0 and !isVowel(s[right])) right--;
-            if (left <= right)
+            array<bool, 128> arr = { false
+            };	// Initialize all elements to false
+
+           	// Set vowel characters to true (both lowercase and uppercase)
+            arr['a'] = true;
+            arr['e'] = true;
+            arr['i'] = true;
+            arr['o'] = true;
+            arr['u'] = true;
+            arr['A'] = true;
+            arr['E'] = true;
+            arr['I'] = true;
+            arr['O'] = true;
+            arr['U'] = true;
+            int left = 0, right = s.size() - 1;
+            while (left < right)
             {
-                char t = s[left];
-                s[left] = s[right];
-                s[right] = t;
+                while (left < s.size() and!arr[s[left]]) left++;
+                while (right >= 0 and!arr[s[right]]) right--;
+                if (left <= right)
+                {
+                    char t = s[left];
+                    s[left] = s[right];
+                    s[right] = t;
+                }
+                left++, right--;
             }
-            left++, right--;
+            return s;
         }
-        return s;
-    }
 };
