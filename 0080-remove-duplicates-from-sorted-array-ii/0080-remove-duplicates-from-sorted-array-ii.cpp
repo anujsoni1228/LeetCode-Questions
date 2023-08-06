@@ -3,7 +3,7 @@ class Solution
     public:
         int removeDuplicates(vector<int> &nums)
         {
-            int i = 0, j = 0, cf = 0, cn = nums[0];
+            int i = 0, j = 0, cf = 0, cn ;
             while (j < nums.size())
             {
                 if (cn != nums[j]) cf = 0, cn = nums[j];
