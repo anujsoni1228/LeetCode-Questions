@@ -3,12 +3,12 @@ class Solution
     public:
         int removeDuplicates(vector<int> &nums)
         {
-            int i = 0, j = 0;
-            unordered_map<int, int> m;
+            int i = 0, j = 0, cf = 0, cn = nums[0];
             while (j < nums.size())
             {
-                m[nums[j]]++;
-                if (m[nums[j]] <= 2)
+                if (cn != nums[j]) cf = 0, cn = nums[j];
+                cf++;
+                if (cf <= 2)
                 {
                     nums[i] = nums[j];
                     i++;
